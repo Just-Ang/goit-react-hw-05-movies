@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import css from './FilmList.module.css';
 import PropTypes from 'prop-types';
 
- export const FilmList = ({ films }) => {
+ const FilmList = ({ films }) => {
   const location = useLocation();
 
   return (
@@ -30,5 +30,5 @@ FilmList.propTypes = {
     })
   ),
 };
-
+ export default FilmList
 

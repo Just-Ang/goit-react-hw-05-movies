@@ -1,8 +1,9 @@
+//import { lazy, Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchBar from 'components/Searchbar/Searchbar';
-//import { lazy, Suspense } from 'react';
-import { FilmList } from 'components/FilmList/FilmList';
+import FilmList from 'components/FilmList/FilmList';
+
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
