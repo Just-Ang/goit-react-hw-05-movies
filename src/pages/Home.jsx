@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 //import FilmList from 'components/FilmList/FilmList';
 import { lazy, Suspense } from 'react';
 
-const FilmList = lazy(() => import('../components/FilmList/FilmList'));
+const FilmList = lazy(() => import("../components/FilmList/FilmList"));
 
 const Home = () => {
   const [filmList, setFilmList] = useState([]);
