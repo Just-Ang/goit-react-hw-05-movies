@@ -1,14 +1,11 @@
-import { useEffect } from 'react';
+
 import { Link,  useLocation } from 'react-router-dom';
 import css from './FilmList.module.css'
 
 export const FilmList = ({ films }) => {
 
     const location = useLocation();
-    useEffect(() => {
-        
-        console.log(location)
-    }, [location])
+  
     
   return (
     <ul className={css.list}>

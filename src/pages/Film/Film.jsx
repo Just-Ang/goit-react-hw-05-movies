@@ -7,12 +7,16 @@ const Film = () => {
   const [filmEl, setFilmEl] = useState('');
   const [genresEl, setGenresEl] = useState([]);
   const [data, setData] = useState('');
+  const [backUrl, SetBackUrl] = useState('');
   const { id } = useParams();
 
   const location = useLocation();
   //console.log(location);
+  useEffect(() => { if (location.state) SetBackUrl(location.state.from);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const backUrl = location.state?.from ?? '/movies';
+  const backUrl2 = backUrl ?? '/movies';
 
   useEffect(() => {
     const options = {
@@ -36,7 +40,7 @@ const Film = () => {
 
   return (
     <main>
-      <Link className={css.button} to={backUrl}>
+      <Link className={css.button} to={backUrl2}>
         {' '}
         &#8592; Go back
       </Link>

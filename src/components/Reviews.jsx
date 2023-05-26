@@ -23,7 +23,7 @@ const Reviews = () => {
     )
       .then(response => response.json())
       .then(response => {
-        console.log(response.results);
+        // console.log(response.results);
         setFilmReview(response.results);
       })
       .catch(err => console.error(err));
