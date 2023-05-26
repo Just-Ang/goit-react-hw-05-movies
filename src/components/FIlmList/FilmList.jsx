@@ -30,3 +30,5 @@ FilmList.propTypes = {
     })
   ),
 };
+
+export default FilmList;

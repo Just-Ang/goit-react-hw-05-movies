@@ -1,10 +1,12 @@
 import { Route, Routes, NavLink } from 'react-router-dom';
-import Home from 'pages/Home';
-import Movies from 'pages/Movies';
-import Film from 'pages/Film/Film';
-import Cast from './Cast/Cast';
-import Reviews from './Reviews/Reviews';
+import { lazy, Suspense } from 'react';
 import css from './App.module.css';
+
+const Home = lazy(() => import('pages/Home'));
+const Movies = lazy(() => import('pages/Movies'));
+const Film = lazy(() => import('pages/Film/Film'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 export const App = () => {
   return (
@@ -17,18 +19,29 @@ export const App = () => {
       }}
     >
       <nav className={css.nav}>
-        <NavLink to="/" className={({ isActive }) => (isActive ? css.active : 'inactive')} >Home</NavLink>
-        <NavLink to="/movies" className={({ isActive }) => (isActive ? css.active : 'inactive')}  >Movies</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? css.active : 'inactive')}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/movies"
+          className={({ isActive }) => (isActive ? css.active : 'inactive')}
+        >
+          Movies
+        </NavLink>
       </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:id" element={<Film />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:id" element={<Film />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </div>
   );
 };

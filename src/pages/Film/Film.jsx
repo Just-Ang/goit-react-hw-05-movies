@@ -12,8 +12,9 @@ const Film = () => {
 
   const location = useLocation();
   //console.log(location);
-  useEffect(() => { if (location.state) SetBackUrl(location.state.from);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (location.state) SetBackUrl(location.state.from);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const backUrl2 = backUrl ?? '/movies';
