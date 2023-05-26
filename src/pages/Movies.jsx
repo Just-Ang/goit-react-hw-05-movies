@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchBar from 'components/Searchbar/Searchbar';
-import { lazy, Suspense } from 'react';
-const FilmList = lazy(() => import("../components/FilmList/FilmList"));
+//import { lazy, Suspense } from 'react';
+import FilmList from 'components/FilmList/FilmList';
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -41,10 +41,10 @@ const Movies = () => {
 
   return (
     <main>
-      <Suspense fallback={<div>Loading...</div>}>
+
         <SearchBar onSubmit={handlerSubmit} />
         <FilmList films={searchFilm}> </FilmList>
-      </Suspense>
+     
     </main>
   );
 };

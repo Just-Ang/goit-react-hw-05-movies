@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-//import FilmList from 'components/FilmList/FilmList';
-import { lazy, Suspense } from 'react';
+import FilmList from 'components/FilmList/FilmList';
+// import { lazy, Suspense } from 'react';
 
-const FilmList = lazy(() => import("../components/FilmList/FilmList"));
+
 
 const Home = () => {
   const [filmList, setFilmList] = useState([]);
@@ -38,9 +38,9 @@ const Home = () => {
       >
         Trending today
       </h1>
-      <Suspense fallback={<div>Loading...</div>}>
+     
         <FilmList films={filmList}> </FilmList>
-      </Suspense>
+      
     </main>
   );
 };
