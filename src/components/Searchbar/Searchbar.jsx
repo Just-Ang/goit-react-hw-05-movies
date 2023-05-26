@@ -2,8 +2,7 @@ import React from 'react';
 import css from './Searchbar.module.css';
 import PropTypes from 'prop-types';
 
- const Searchbar = ({ onSubmit }) => {
-
+const Searchbar = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 

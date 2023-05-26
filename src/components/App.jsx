@@ -2,8 +2,8 @@ import { Route, Routes, NavLink } from 'react-router-dom';
 import Home from 'pages/Home';
 import Movies from 'pages/Movies';
 import Film from 'pages/Film/Film';
-import Cast from './Cast';
-import Reviews from './Reviews';
+import Cast from './Cast/Cast';
+import Reviews from './Reviews/Reviews';
 import css from './App.module.css';
 
 export const App = () => {

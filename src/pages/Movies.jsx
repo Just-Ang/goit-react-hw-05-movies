@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
 import SearchBar from 'components/Searchbar/Searchbar';
 import { FilmList } from 'components/FIlmList/FilmList';
 
@@ -11,21 +10,14 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    const name = searchParams.get("query");
-    if (name !== null)
-    setSearchQuery(name);
-    
-}, [searchParams])
- 
-
-
-  
+    const name = searchParams.get('query');
+    if (name !== null) setSearchQuery(name);
+  }, [searchParams]);
 
   const handlerSubmit = searchQuery => {
     setSearchQuery(searchQuery);
     setSearchParams({ query: searchQuery });
   };
-  
 
   const options = {
     method: 'GET',
