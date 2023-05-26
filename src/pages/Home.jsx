@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import FilmList from 'components/FilmList/FilmList';
+import FilmList from 'components/FIlmList/FilmList';
 // import { lazy, Suspense } from 'react';
 
 

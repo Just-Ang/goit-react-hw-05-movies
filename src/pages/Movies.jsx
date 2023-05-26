@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchBar from 'components/Searchbar/Searchbar';
-import FilmList from 'components/FilmList/FilmList';
+import FilmList from 'components/FIlmList/FilmList';
 
 
 const Movies = () => {
