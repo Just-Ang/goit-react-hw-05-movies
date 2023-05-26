@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import css from './Film.module.css'
+import css from './Film.module.css';
 
 const Film = () => {
   const [filmEl, setFilmEl] = useState('');
   const [genresEl, setGenresEl] = useState([]);
-  const [data, setData] = useState('')
+  const [data, setData] = useState('');
   const { id } = useParams();
 
   const location = useLocation();
@@ -28,24 +28,32 @@ const Film = () => {
       .then(response => response.json())
       .then(response => {
         setGenresEl(response.genres);
-        setData(response.release_date.slice(0, 4))
+        setData(response.release_date.slice(0, 4));
         setFilmEl(response);
       })
       .catch(err => console.error(err));
   }, [id]);
 
-
   return (
     <main>
-      <Link className={css.button} to={backUrl}> &#8592; Go back</Link>
+      <Link className={css.button} to={backUrl}>
+        {' '}
+        &#8592; Go back
+      </Link>
       <div className={css.cardFilm}>
-        <img className={css.img} src={`https://image.tmdb.org/t/p/w200${filmEl.poster_path}`} alt={filmEl.title} />
+        <img
+          className={css.img}
+          src={`https://image.tmdb.org/t/p/w200${filmEl.poster_path}`}
+          alt={filmEl.title}
+        />
         <div>
-          <h2>{filmEl.title} ({data})</h2>
+          <h2>
+            {filmEl.title} ({data})
+          </h2>
           <p>User Score {filmEl.vote_average}</p>
           <h3>Overview</h3>
           <p>{filmEl.overview}</p>
-          <h3 >Genres</h3>
+          <h3>Genres</h3>
           <div className={css.genres}>
             {genresEl.map(({ name, id }) => (
               <p key={id}>{name}</p>

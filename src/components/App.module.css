@@ -2,7 +2,7 @@
 display: flex;
 justify-content: space-around;
 text-decoration: none;
-color: black;
+
 box-shadow: 4px 6px 13px -7px rgba(0,0,0,0.75);
 }
 .nav a {
@@ -11,7 +11,7 @@ box-shadow: 4px 6px 13px -7px rgba(0,0,0,0.75);
     padding: 20px;
 
 }
-.active {
+
+.nav a.active {
     color: red;
-    
 }

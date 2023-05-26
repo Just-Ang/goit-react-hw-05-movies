@@ -4,14 +4,12 @@ import Movies from 'pages/Movies';
 import Film from 'pages/Film/Film';
 import Cast from './Cast';
 import Reviews from './Reviews';
-import css from './App.module.css'
+import css from './App.module.css';
 
 export const App = () => {
   return (
     <div
       style={{
-        // height: '100vh',
-        //display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
 
@@ -19,16 +17,16 @@ export const App = () => {
       }}
     >
       <nav className={css.nav}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
+        <NavLink to="/" className={({ isActive }) => (isActive ? css.active : 'inactive')} >Home</NavLink>
+        <NavLink to="/movies" className={({ isActive }) => (isActive ? css.active : 'inactive')}  >Movies</NavLink>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<Film />}>
-          <Route path="cast" element={<Cast/>} />
-          <Route path="reviews" element={<Reviews/>}  />
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
       </Routes>
     </div>
