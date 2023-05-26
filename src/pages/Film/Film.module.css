@@ -1,0 +1,43 @@
+.cardFilm {
+    margin-left: 50px;
+    margin-top: 50px;
+    display: flex;
+}
+
+.img {
+    margin-right: 50px;
+}
+
+.genres {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-top: 20px;
+   width: 100px;
+   height: 30px;
+   color: black;
+   border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #898989;
+    box-shadow: 0 5px 0 #353535;
+ 
+}
+.button:hover {
+    background: #7d7d7d;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+.infoAdd {
+    margin-left: 50px;
+}
+
