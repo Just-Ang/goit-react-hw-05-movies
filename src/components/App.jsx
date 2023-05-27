@@ -31,6 +31,7 @@ export const App = () => {
         >
           Movies
         </NavLink>
+        
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
