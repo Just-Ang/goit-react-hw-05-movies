@@ -20,7 +20,7 @@ export const App = () => {
     >
       <nav className={css.nav}>
         <NavLink
-          to="/"
+          to="/goit-react-hw-05-movies"
           className={({ isActive }) => (isActive ? css.active : 'inactive')}
         >
           Home
@@ -35,7 +35,7 @@ export const App = () => {
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/goit-react-hw-05-movies" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/movies/:id" element={<Film />}>
             <Route path="cast" element={<Cast />} />
